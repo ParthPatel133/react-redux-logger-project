@@ -1,0 +1,42 @@
+{
+  "logs": [
+    {
+      "id": 1,
+      "message": "message1",
+      "attension": false,
+      "date": "25-12-2020",
+      "tech": "shane jack"
+    },
+    {
+      "id": 2,
+      "message": "message2",
+      "attension": true,
+      "date": "25-12-2020",
+      "tech": "brad wilson"
+    },
+    {
+      "id": 3,
+      "message": "message3",
+      "attension": false,
+      "date": "25-12-2020",
+      "tech": "joy williams"
+    }
+  ],
+  "techs": [
+    {
+      "id": 1,
+      "firstName": "monica",
+      "lastName": "geller"
+    },
+    {
+      "id": 2,
+      "firstName": "john",
+      "lastName": "doe"
+    },
+    {
+      "id": 3,
+      "firstName": "shane",
+      "lastName": "watson"
+    }
+  ]
+}
