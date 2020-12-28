@@ -1,3 +1,5 @@
+import M from 'materialize-css/dist/js/materialize';
+
 import {useState} from 'react';
 const AddLogmodal = () => {
   const [message, setMessage] = useState('');
@@ -5,7 +7,11 @@ const AddLogmodal = () => {
   const [tech, setTech] = useState('');
 
   const onSubmit = () => {
-    console.log(message, tech, attension);
+    if (message === '' || tech === '') {
+      M.toast({html: 'Please enter a message and tech'});
+    } else {
+      console.log(message, tech, attension);
+    }
   };
 
   return (
