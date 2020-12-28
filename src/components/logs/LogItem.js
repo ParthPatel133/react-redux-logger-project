@@ -6,8 +6,8 @@ const LogItem = ({log}) => {
     <li className='collection-item'>
       <div>
         <a
-          href='#edit-log-model'
-          className={`model-trigger ${
+          href='#edit-log-modal'
+          className={`modal-trigger ${
             log.attension ? 'red-text' : 'blue-text'
           }`}
         >
@@ -19,6 +19,9 @@ const LogItem = ({log}) => {
           <span className='black-text'>{log.tech}</span> on{' '}
           <Moment format='DD MMMM YYYY, h:mm:ss a'>{log.date}</Moment>
         </span>
+        <a href='#!' className='secondary-content'>
+          <i className='material-icons grey-text'>delete</i>
+        </a>
       </div>
     </li>
   );
