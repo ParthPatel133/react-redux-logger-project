@@ -1,24 +1,18 @@
 import {useState, useEffect} from 'react';
 import Preloader from '../layout/Preloader';
 import LogItem from './LogItem';
+import {useDispatch, useSelector} from 'react-redux';
+import {getLogs} from '../../actions/logAction';
 
 const Logs = () => {
-  const [logs, setLogs] = useState([]);
-  const [loading, setLoading] = useState(false);
+  const dispatch = useDispatch();
+  const {logs, loading} = useSelector((state) => state.log);
 
   useEffect(() => {
-    getLogs();
+    dispatch(getLogs());
   }, []);
 
-  const getLogs = async () => {
-    setLoading(true);
-    const res = await fetch('/logs');
-    const data = await res.json();
-    setLogs(data);
-    setLoading(false);
-  };
-
-  if (loading) {
+  if (loading || logs === null) {
     return <Preloader />;
   }
 
