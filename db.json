@@ -20,6 +20,27 @@
       "attension": false,
       "date": "12-25-2020",
       "tech": "Shane Watson"
+    },
+    {
+      "message": "df",
+      "attension": false,
+      "tech": "John Doe",
+      "date": "2020-12-28T18:31:53.569Z",
+      "id": 4
+    },
+    {
+      "message": "pc 12 is not working correctly",
+      "attension": true,
+      "tech": "John Doe",
+      "date": "2020-12-28T18:35:03.156Z",
+      "id": 5
+    },
+    {
+      "message": "pc 12 is resolved",
+      "attension": false,
+      "tech": "Shane Watson",
+      "date": "2020-12-28T18:38:17.578Z",
+      "id": 6
     }
   ],
   "techs": [

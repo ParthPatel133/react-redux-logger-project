@@ -1,4 +1,4 @@
-import {useState, useEffect} from 'react';
+import {useEffect} from 'react';
 import Preloader from '../layout/Preloader';
 import LogItem from './LogItem';
 import {useDispatch, useSelector} from 'react-redux';
@@ -10,7 +10,7 @@ const Logs = () => {
 
   useEffect(() => {
     dispatch(getLogs());
-  }, []);
+  }, [dispatch]);
 
   if (loading || logs === null) {
     return <Preloader />;
