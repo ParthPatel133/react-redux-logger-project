@@ -4,6 +4,7 @@ import {useEffect} from 'react';
 
 import {useState} from 'react';
 import {updateLog} from '../../actions/logAction';
+import TechSelectOption from '../techs/TechSelectOption';
 
 const EditLogmodal = () => {
   const [message, setMessage] = useState('');
@@ -69,9 +70,7 @@ const EditLogmodal = () => {
               <option value='' disabled>
                 Select Technicial
               </option>
-              <option value='Monica Geller'>Monica Geller</option>
-              <option value='John Doe'>John Doe</option>
-              <option value='Shane Watson'>Shane Watson</option>
+              <TechSelectOption />
             </select>
           </div>
         </div>

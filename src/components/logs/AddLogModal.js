@@ -1,8 +1,9 @@
 import M from 'materialize-css/dist/js/materialize';
 import {useDispatch} from 'react-redux';
-
 import {useState} from 'react';
 import {addLog} from '../../actions/logAction';
+import TechSelectOption from '../techs/TechSelectOption';
+
 const AddLogmodal = () => {
   const [message, setMessage] = useState('');
   const [attension, setAttension] = useState(false);
@@ -58,9 +59,7 @@ const AddLogmodal = () => {
               <option value='' disabled>
                 Select Technicial
               </option>
-              <option value='Monica Geller'>Monica Geller</option>
-              <option value='John Doe'>John Doe</option>
-              <option value='Shane Watson'>Shane Watson</option>
+              <TechSelectOption />
             </select>
           </div>
         </div>
