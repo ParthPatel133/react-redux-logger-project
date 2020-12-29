@@ -6,13 +6,6 @@
       "attension": false,
       "tech": "John Doe",
       "date": "2020-12-29T09:19:27.362Z"
-    },
-    {
-      "message": "pc 12 is resolved",
-      "attension": false,
-      "tech": "Shane Watson",
-      "date": "2020-12-28T18:38:17.578Z",
-      "id": 6
     }
   ],
   "techs": [
