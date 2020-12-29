@@ -1,8 +1,9 @@
 import M from 'materialize-css/dist/js/materialize';
-import {useSelector} from 'react-redux';
+import {useSelector, useDispatch} from 'react-redux';
 import {useEffect} from 'react';
 
 import {useState} from 'react';
+import {updateLog} from '../../actions/logAction';
 
 const EditLogmodal = () => {
   const [message, setMessage] = useState('');
@@ -10,6 +11,7 @@ const EditLogmodal = () => {
   const [tech, setTech] = useState('');
 
   const current = useSelector((state) => state.log.current);
+  const dispatch = useDispatch();
 
   useEffect(() => {
     if (current) {
@@ -23,7 +25,18 @@ const EditLogmodal = () => {
     if (message === '' || tech === '') {
       M.toast({html: 'Please enter a message and tech'});
     } else {
-      console.log(message, tech, attension);
+      //updLog for edit the log
+      const updLog = {
+        id: current.id,
+        message,
+        attension,
+        tech,
+        date: new Date(),
+      };
+
+      dispatch(updateLog(updLog));
+      M.toast({html: `Log updated by: ${tech}`});
+
       //clear field
       setMessage('');
       setTech('');
