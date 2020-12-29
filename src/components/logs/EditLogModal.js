@@ -1,4 +1,6 @@
 import M from 'materialize-css/dist/js/materialize';
+import {useSelector} from 'react-redux';
+import {useEffect} from 'react';
 
 import {useState} from 'react';
 
@@ -6,6 +8,16 @@ const EditLogmodal = () => {
   const [message, setMessage] = useState('');
   const [attension, setAttension] = useState(false);
   const [tech, setTech] = useState('');
+
+  const current = useSelector((state) => state.log.current);
+
+  useEffect(() => {
+    if (current) {
+      setMessage(current.message);
+      setAttension(current.attension);
+      setTech(current.tech);
+    }
+  }, [current]);
 
   const onSubmit = () => {
     if (message === '' || tech === '') {
@@ -31,9 +43,6 @@ const EditLogmodal = () => {
               value={message}
               onChange={(e) => setMessage(e.target.value)}
             />
-            <label htmlFor='message' className='active'>
-              Log message
-            </label>
           </div>
         </div>
         <div className='raw'>

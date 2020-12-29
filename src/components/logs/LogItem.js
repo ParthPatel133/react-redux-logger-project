@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import Moment from 'react-moment';
 import M from 'materialize-css/dist/js/materialize';
 import {useDispatch} from 'react-redux';
-import {deleteLog} from '../../actions/logAction';
+import {deleteLog, setCurrent} from '../../actions/logAction';
 
 const LogItem = ({log}) => {
   const dispatch = useDispatch();
@@ -20,6 +20,7 @@ const LogItem = ({log}) => {
           className={`modal-trigger ${
             log.attension ? 'red-text' : 'blue-text'
           }`}
+          onClick={() => dispatch(setCurrent(log))}
         >
           {log.message}
         </a>
